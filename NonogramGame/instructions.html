@@ -1,0 +1,137 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nonogram Instructions</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Sansita&family=Poppins&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: Poppins;
+                font-weight: 500;
+                
+            }
+            
+            table td {
+            min-width: 30px;
+            width: 50px;
+            height: 50px;
+        }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div id="intro">
+                <!-- <h1>My Cool Game</h1> -->
+            </div>
+            <!-- <div class='buttons'>
+                <span>Start New Game: </span>
+                <button id="start-easy">Easy</button>
+                <button id="start-medium">Medium (default)</button>
+                <button id="start-hard">Hard</button>
+            </div> -->
+            <img id="arrowImage1" src="https://res.cloudinary.com/dksynwdd7/image/upload/v1698734861/Vector_bawodl.png" alt="arrow" class="arrow-hint" style="display: none;">
+            <img id="arrowImage2" src="https://res.cloudinary.com/dksynwdd7/image/upload/v1698734861/Vector_bawodl.png" alt="arrow" class="arrow-hint2" style="display: none;">
+            <img id="arrowImage3" src="https://res.cloudinary.com/dksynwdd7/image/upload/v1698734861/Vector_bawodl.png" alt="arrow" class="arrow-hint3" style="display: none;">
+            <table>
+                <tbody id="game-table-body">
+                    
+                </tbody>
+            </table>
+           <div class="btn-group">
+            <!-- <h4 id="timerText">15:00</h4> -->
+            <button class="skip-tutorial" id="skipTut" style="font-family: Poppins;">Skip Tutorial>></button>
+            <!-- <button class="see-solution" id="seeSolution" style="font-family: Poppins;">See Solution</button> -->
+            <!-- <button class="giveup" id="giveup">Giveup</button> -->
+           </div>
+        </section>
+        <dialog class="proceed-modal" id="proceedModal">
+            <p id="dialogHeading" class="proceed-text"></p>
+            <div><button id="yesButton" class="proceed-button">Play</button></div>
+            <!-- <div><button id="noButton" class="proceed-button">No</button></div> -->
+        </dialog>
+        <dialog class="proceed-modal" id="proceedModal">
+            <p id="dialogHeading" class="proceed-text"></p>
+            <div><button id="yesButton" class="proceed-button">Play</button></div>
+            <!-- <div><button id="noButton" class="proceed-button">No</button></div> -->
+        </dialog>
+        <dialog id="firstBox" class="first-box">
+            <p id="firstBoxText" class="inside-box-text"> Nonograms are played on a grid of rows and columns, aiming to unveil a hidden pattern.</p>
+            <div>
+                <p>Let’s get started!</p>
+                <button id="okBtn" class="ok-btn">
+                    Ok
+                </button>
+            </div>
+
+        </dialog>
+        
+        <dialog class="first-box" id="secondBox">
+            <p id="secondBoxText" class="inside-box-text">Numerical clues at the start of rows and columns guide the placement of filled squares.</p>
+            <div> 
+                <button id="okBtn2" class="ok-btn">
+                    Ok
+                </button>
+            </div>
+        </dialog>
+        <dialog class="first-box" id="thirdBox">
+            <p id="dialogHeading3" class="inside-box-text">Each clue number represents consecutive filled squares with at least one empty square between groups. </p>  
+            <div> 
+                <button id="okBtn3" class="ok-btn">
+                    Next
+                </button>
+            </div>
+        </dialog>
+        
+        <dialog class="first-box" id="fourthBox">
+            <p id="dialogHeading4" class="inside-box-text">Click left mouse button on the square to fill.</p> 
+            <div> 
+                <button id="okBtn4" class="ok-btn">
+                    Next
+                </button>
+            </div>
+        </dialog>
+        
+        <dialog class="first-box" id="fifthBox">
+            <p id="dialogHeading5" class="inside-box-text">Click right mouse button on the square to be empty.</p>
+            <div> 
+                <button id="okBtn5" class="ok-btn">
+                    Next
+                </button>
+            </div>
+        </dialog>
+        <dialog class="first-box" id="sixthBox">
+            <p id="dialogHeading5" class="inside-box-text">Use logic and deduction to progressively fill the grid row by row and column by column and ensure correct placement of filled and empty squares to complete these puzzles.</p>
+            <div>
+                <button id="okBtn6" class="ok-btn">
+                    Next
+                </button>
+            </div>
+        </dialog>
+
+        <!-- create a dailougue box with an image-->
+        <dialog class="first-box" id="myModal">
+            <p style="color: red; font-size: 40px; margin: 0; padding: 0; font-weight: 700;">Welldone!!!</p>
+            <p class="inside-box-text">You have completed the tutorial successfully. </p>
+            <div>
+                <p>Now let’s play the game</p>
+                <button id="lastOkBtn" class="ok-btn">
+                    play
+                </button>
+            </div>
+        
+        <!-- <section class="features">
+            <div class="features">
+                <h3 class="features">Features:</h3>
+                <ul class="features">
+                    <li>Multiple Difficulties</li>
+                    <li>Mark cells you know aren't spots</li>
+                    <li>Mark the top and side numbers when you're done</li>
+                    <li>Click and drag to select multiple cells at once</li>
+                </ul>
+            </div>
+        </section> -->
+        <script type="text/javascript" src="./instructions.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Game</title>
+        <link href="https://fonts.googleapis.com/css2?family=Sansita&family=Poppins&display=swap" rel="stylesheet">
+        <style>
+           body {
+                font-family: helvetica, arial, sans-serif;
+                display: flex;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            .bg-container{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; 
+                background-image: url("https://res.cloudinary.com/dnro1bzvr/image/upload/v1698316903/BACKGROUND_kvspal.png");
+                gap: 2vw;
+            }
+            .btn-container{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2vw;
+            }
+
+            .level{
+                width: 21%;
+                padding: 12px;
+                background: transparent;
+                border-radius: 15px;
+                text-decoration: none;
+                color: #B8E3FF;
+                font-size: 1.3em;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 100px;
+                border: 4px solid #B8E3FF;
+                font-family: Poppins;
+            }
+            .level:hover{
+                background-color: #B8E3FF;
+                color: #3643BA;
+            }
+
+            h1 {
+                font-size: 3em;
+                font-weight: 900; 
+                /* color: #D71A1A; */
+                color: #B8E3FF;
+                opacity: 1;
+            }
+
+
+
+            @media (min-width: 993px) and (max-width:1200px) {
+                h1{
+                    font-size: 2.5em;
+                }
+
+                .level{
+                    width: 23%;
+                    font-size: 1.2em;
+                    padding: 12px;
+                }
+            }
+
+
+            @media (min-width: 577px) and (max-width:992px) {
+                h1{
+                    font-size: 2.2em;
+                }
+                .level{
+                    width: 25%;
+                    font-size: 1em;
+                    padding: 8px;
+                }
+            }
+
+
+            @media (max-width: 576px) {
+                h1{
+                    font-size: 1.4em;
+                }
+
+                .level{
+                    width: 180px;
+                    font-size: 1em;
+                    padding: 8px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+           <div class="bg-container">
+             <h1 style="font-family: Sansita;">Select Difficulty Level</h1> 
+             <div class="btn-container">
+               <button id="easyBtn" class="level">Beginner</button>
+               <button id="medBtn" class="level">Competent</button>
+               <button id="hardBtn" class="level">Proficient</button>
+               <button id="expertBtn" class="level">Expert</button>
+             </div> 
+           </div>  
+    </body>
+
+    <script>
+        var easyBtn = document.getElementById("easyBtn");
+        var medBtn = document.getElementById("medBtn");
+        var hardBtn = document.getElementById("hardBtn");
+        var expertBtn = document.getElementById("expertBtn");
+
+        easyBtn.addEventListener("click",function(){
+            window.location = "index.html?level=begin";
+        });
+
+        medBtn.addEventListener("click",function(){
+            window.location = "index.html?level=easy";
+        });
+
+        hardBtn.addEventListener("click",function(){
+            window.location = "index.html";
+        });
+        expertBtn.addEventListener("click",function(){
+            window.location = "index.html?level=hard";
+        });
+
+    </script>
+</html>

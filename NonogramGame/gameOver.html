@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Game Over</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+           
+            <div class= "instructions-text" id="intro">
+                <h3 style="color:brown">Game Over</h3>
+                <h3 id="med_score">Medium Level Score:</h3>
+                <h3 id="hard_score">Hard Level Score: </h3>
+                <button class="beginner instructions" style="margin-top:10vh" onclick="gotohome()">Go to Home</button>                                
+            </div>
+        
+    </body>
+
+    <script>
+        var time = 0;
+        var gameover = 1;
+        document.getElementById("med_score").innerHTML = "Medium Level Score: "+localStorage.firstLevelScore;
+        document.getElementById("hard_score").innerHTML = "Hard Level Score: "+localStorage.secondLevelScore;
+        let userScore = 0;
+        let userLevel = 0;
+        if(localStorage.keyLevel == 'begin'){
+            userLevel = 0;
+        }
+        else if(localStorage.keyLevel == 'easy'){
+            userLevel = 1;
+        }
+        else if(localStorage.keyLevel == 'medium'){
+            userLevel = 2;
+        }
+        else{
+            userLevel = 3;
+        }
+
+        function calculateUserScore(){
+            if(localStorage.firstLevelScore > 0){
+                if(localStorage.keyLevel == 'begin'){
+                let maxScore = 10000
+                userScore = maxScore - (10*localStorage.firstLevelScore);
+                if(userScore < 1000){
+                    userScore = 1000;
+                }
+                
+            }
+            else if(localStorage.keyLevel == 'easy'){
+                let maxScore = 25000
+                userScore = maxScore - (10*localStorage.firstLevelScore);
+                if(userScore < 10000){
+                    userScore = 10000;
+                }
+            }
+            else if(localStorage.keyLevel == 'medium'){
+                let maxScore = 50000
+                userScore = maxScore - (10*localStorage.firstLevelScore);
+                if(userScore < 25000){
+                    userScore = 25000;
+                }
+            }
+            else{
+                let maxScore = 80000
+                userScore = maxScore - (10*localStorage.firstLevelScore);
+                if(userScore < 50000){
+                    userScore = 50000;
+                }
+            }
+            }
+            else{
+                userScore = 0;
+            }
+            myJavascriptFunction();
+        }
+
+
+        function myJavascriptFunction() {
+           // window.location = "../JS-PhpFile/SaveData.php?medscore=" + localStorage.firstLevelScore + "&hardscore=" + localStorage.secondLevelScore + "&level=" + localStorage.keyLevel + "&time=" + time;
+           window.location = "../JS-PhpFile/SaveData.php?score=" + userScore + "&gameOver=" + gameover + "&level=" + userLevel + "&time=" + time;
+        }
+
+        calculateUserScore();
+        
+    </script>
+    </html>
